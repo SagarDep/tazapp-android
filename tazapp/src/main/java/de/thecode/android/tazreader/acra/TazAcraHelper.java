@@ -2,9 +2,6 @@ package de.thecode.android.tazreader.acra;
 
 import android.app.Application;
 
-import de.thecode.android.tazreader.BuildConfig;
-import de.thecode.android.tazreader.R;
-
 import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.ReportingInteractionMode;
@@ -13,6 +10,8 @@ import org.acra.config.ACRAConfigurationException;
 import org.acra.config.ConfigurationBuilder;
 import org.acra.sender.HttpSender;
 
+import de.thecode.android.tazreader.BuildConfig;
+import de.thecode.android.tazreader.R;
 import timber.log.Timber;
 
 /**
@@ -29,9 +28,9 @@ public class TazAcraHelper {
                              .setConnectionTimeout(30000)
                              .setHttpMethod(HttpSender.Method.PUT)
                              .setReportType(HttpSender.Type.JSON)
-                             .setFormUri(BuildConfig.ACRA_FORM_URI)
-                             .setFormUriBasicAuthLogin(BuildConfig.ACRA_FORM_URI_BASIC_AUTH_LOGIN)
-                             .setFormUriBasicAuthPassword(BuildConfig.ACRA_FORM_URI_BASIC_AUTH_PASSWORD)
+//                             .setFormUri(BuildConfig.ACRA_FORM_URI)
+//                             .setFormUriBasicAuthLogin(BuildConfig.ACRA_FORM_URI_BASIC_AUTH_LOGIN)
+//                             .setFormUriBasicAuthPassword(BuildConfig.ACRA_FORM_URI_BASIC_AUTH_PASSWORD)
                              .setReportingInteractionMode(ReportingInteractionMode.DIALOG)
                              .setResToastText(R.string.crash_toast_text)
                              .setResDialogText(R.string.crash_dialog_text)

@@ -52,7 +52,7 @@ idea {
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.gfx.ribbonizer'
 apply plugin: 'com.github.triplet.play'
-
+/*
 def overheadPath
 
 File tcLocalPropsFile = project.rootProject.file('tc_local.properties')
@@ -82,7 +82,7 @@ if (overheadPath != null) {
 } else {
     logger.error('overheadpath not set')
 }
-
+*/
 
 android {
 
@@ -223,7 +223,7 @@ android {
 
     productFlavors.all { flavor ->
         def helpDir = new File(project.projectDir,"src/${flavor.name}/assets/help")
-        def localZip = new File(project.ext.overheadPath, "temp_${flavor.name}.zip")
+        def localZip = new File("temp_${flavor.name}.zip")
         def helpDownloadTaskName = "helpDownloadFile${flavor.name.capitalize()}"
         def helpUnzipTaskName = "helpUnzipFile${flavor.name.capitalize()}"
         def helpDeleteZipTaskName = "helpDeleteZipFile${flavor.name.capitalize()}"
@@ -251,7 +251,7 @@ android {
 
 repositories {
     maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
-    maven { url 'https://maven.fabric.io/public' }
+//    maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {
@@ -300,7 +300,7 @@ dependencies {
 
     compile 'org.mightyfrog.centeringrecyclerview:centeringrecyclerview:1.1.6'
 
-    compile "com.google.firebase:firebase-messaging:$firebaseVer"
+//    compile "com.google.firebase:firebase-messaging:$firebaseVer"
 
     compile 'com.evernote:android-job:1.2.0-alpha3'
 
@@ -320,4 +320,4 @@ class Download extends DefaultTask {
     }
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
